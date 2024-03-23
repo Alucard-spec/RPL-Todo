@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { auth } from '../firebase';
 import {useNavigate} from 'react-router-dom';
 
@@ -7,13 +7,15 @@ const Auth = () => {
   const navigate= useNavigate()
 
 
-
-   onAuthStateChanged(auth,(user)=>{
+    useEffect(()=>{
+      onAuthStateChanged(auth,(user)=>{
         if(user){
             
             navigate("/data");
             
-        }
+        }   
+    })
+   
         
    })
     

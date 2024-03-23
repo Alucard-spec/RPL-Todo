@@ -5,7 +5,7 @@ import React from 'react'
 import { db } from '../firebase'; 
 import { deleteDoc,doc} from 'firebase/firestore';
 
-const Missions = ({todo,getTasks}) => {
+const Missions = ({todo,getTasks,updateP}) => {
 
   const deleteTask = async (id) => {
     const taskDoc= doc(db,"Tasks",id);
@@ -13,9 +13,12 @@ const Missions = ({todo,getTasks}) => {
     getTasks();
     
   }
+  
+ 
+ 
 
   return (
-    <div className={todo.Difficulty=='hard'?'bg-red-500 p-5 border border-black rounded-lg ':todo.Difficulty=='medium'?'bg-yellow-400 p-5 border border-black rounded-lg ':'bg-green-400 p-5 border border-black rounded-lg '} > 
+    <div className={todo.Difficulty==='hard'?'bg-red-500 p-5 border border-black rounded-lg ':todo.Difficulty==='medium'?'bg-yellow-400 p-5 border border-black rounded-lg ':'bg-green-400 p-5 border border-black rounded-lg '} > 
       <div className='md:flex md:justify-between space-y-6 md:space-y-0'>
     <div>
         <div className='text-2xl font-serif md:text-4xl font-bold'>
@@ -30,11 +33,16 @@ const Missions = ({todo,getTasks}) => {
             {todo.DueDate}
             
         </div>
+        {todo.userID}
         </div>
         <div className='flex  justify-evenly md:justify-between md:flex-col'>
         
         <button >
-      <MdDone size={30}/>
+      <MdDone size={30} onClick={ async ()=> {
+        
+        
+       await updateP(todo.Difficulty);
+      deleteTask(todo.id)}}/>
         </button>
         <button  onClick={()=>deleteTask(todo.id)}>
           <RiDeleteBinFill size={30}/>
