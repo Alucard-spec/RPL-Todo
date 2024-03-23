@@ -24,15 +24,23 @@ const Auth = () => {
     const [password,setPassword]=useState("");
 
     const signIn=async ()=>{
+      try{
         
             await createUserWithEmailAndPassword(auth,email,password);
-            
+      }
+      catch(err){
+        console.error(err);
+      }  
         
     }
    
-    const LogIn=async ()=>{
+    const LogIn=async ()=>{ 
+      try{
         await signInWithEmailAndPassword(auth,email,password);
-        
+      }
+      catch(err){
+        console.error(err);
+      }
  
     }
     
@@ -102,7 +110,7 @@ const Auth = () => {
               type="password"
               onChange={(e)=>setPassword(e.target.value)}           
               className="w-full px-3 py-2 border rounded-md focus:outline-none text-black focus:border-blue-500"
-              placeholder="Create your password"
+              placeholder="should contain atleast 6 digits"
              
               
             />
