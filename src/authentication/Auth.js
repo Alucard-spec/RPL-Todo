@@ -57,7 +57,7 @@ const Auth = () => {
 
       
     <div  className="min-h-screen flex flex-col gap-5 items-center justify-center lg:flex-row">
-        <div className="md:hidden  bg-white text-black p-3 rounded-xl font-bold mt-6 transition-all hover:scale-105 cursor-pointer">Sign In with Google</div>
+        <div className="md:hidden  bg-white text-black p-3 rounded-xl font-bold mt-6 transition-all hover:scale-105 cursor-pointer" onClick={googleSignIn}>Sign In with Google</div>
 <div className="max-w-md w-full p-6  rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Login</h2>
       
