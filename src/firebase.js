@@ -20,6 +20,8 @@ const app = initializeApp(firebaseConfig);
 export const db= getFirestore(app);
 
 export const auth = getAuth(app);
+
+// sign in with google functionality
 export function googleSignIn(){signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.

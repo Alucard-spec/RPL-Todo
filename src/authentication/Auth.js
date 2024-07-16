@@ -53,7 +53,7 @@ const Auth = () => {
     <div className=' bg-black text-white'>
       
       <div className='text-3xl md:text-4xl lg:text-5xl text-red-600 font-extrabold w-fit mx-auto pt-5'>R<span className='text-sm text-white'>ole</span> P<span className='text-sm text-white'>laying</span> L<span className='text-sm text-white'>ife</span> </div>
-      <div className=" w-fit absolute top-0 right-5 bg-white text-black p-3 rounded-xl font-bold mt-6 hover:scale-105 transition-all cursor-pointer" onClick={googleSignIn}>Sign In with Google</div>
+      <div className=" w-fit hidden md:block absolute top-0 right-5 bg-white text-black p-3 rounded-xl font-bold mt-6 hover:scale-105 transition-all cursor-pointer" onClick={googleSignIn}>Sign In with Google</div>
 
       
     <div  className="min-h-screen flex flex-col gap-5 items-center justify-center lg:flex-row">
