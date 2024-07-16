@@ -19,9 +19,9 @@ const Missions = ({todo,getTasks,updateP}) => {
 
   return (
     <div className={todo.Difficulty==='hard'?'bg-red-500 p-5 border border-black rounded-lg ':todo.Difficulty==='medium'?'bg-yellow-400 p-5 border border-black rounded-lg ':'bg-green-400 p-5 border border-black rounded-lg '} > 
-      <div className='md:flex md:justify-between md:space-y-0'>
+      <div className='md:flex md:justify-between md:space-y-0 '>
     <div className="md:space-y-6 space-y-4">
-        <div className='text-2xl font-serif md:text-4xl font-bold'>
+        <div className='text-2xl font-mono md:text-4xl font-bold underline'>
             {todo.title}
         </div>
        

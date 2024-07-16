@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { auth } from '../firebase';
 import {useNavigate} from 'react-router-dom';
 
+import {googleSignIn} from "../firebase";
+
+
+
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged} from 'firebase/auth';
 const Auth = () => {
   const navigate= useNavigate()
@@ -47,9 +51,13 @@ const Auth = () => {
 
   return (
     <div className=' bg-black text-white'>
+      
       <div className='text-3xl md:text-4xl lg:text-5xl text-red-600 font-extrabold w-fit mx-auto pt-5'>R<span className='text-sm text-white'>ole</span> P<span className='text-sm text-white'>laying</span> L<span className='text-sm text-white'>ife</span> </div>
-    <div  className="min-h-screen flex flex-col gap-5 items-center justify-center lg:flex-row">
+      <div className=" w-fit absolute top-0 right-5 bg-white text-black p-3 rounded-xl font-bold mt-6 hover:scale-105 transition-all cursor-pointer" onClick={googleSignIn}>Sign In with Google</div>
 
+      
+    <div  className="min-h-screen flex flex-col gap-5 items-center justify-center lg:flex-row">
+        <div className="md:hidden  bg-white text-black p-3 rounded-xl font-bold mt-6 transition-all hover:scale-105 cursor-pointer">Sign In with Google</div>
 <div className="max-w-md w-full p-6  rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Login</h2>
       
